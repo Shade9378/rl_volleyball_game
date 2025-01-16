@@ -32,7 +32,7 @@ git clone git@github.com:Shade9378/rl_volleyball_game.git
 | Rotate Right	| D | 
 | Jump |	Space |
 
-## To train agents:
+## To train the agent:
 - Modify the training configuration in Assets/Config/trainer_config.yaml to suit your needs.
 - Activate the virtual environment containing your installation of `ml-agents`.
 - Navigate to your working directory, and run in the terminal:
