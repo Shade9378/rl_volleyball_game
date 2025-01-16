@@ -4,7 +4,7 @@
 A reinforcement learning-based volleyball game developed using Unity, where an agent learns to play volleyball through trial and error. The game is designed to implement reinforcement learning algorithms to improve agent behavior in the context of volleyball.
 
 ## Setup and Installation
-### Prerequisites:
+### Prerequisites
 - `Unity Editor (2020.3 or higher recommended)`
 - `Unity ML-Agents Toolkit` (required for training models)
 
