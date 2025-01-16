@@ -1,11 +1,7 @@
 # RL Volleyball Game
 
 ## Overview
-This project demonstrates:
-Agents learning to play volleyball using Reinforcement Learning.
-Human-controllable agents for interactive gameplay.
-A simulated environment designed to train agents on team-based tasks.
-The primary goal is to showcase AI agents learning competitive and cooperative strategies in a dynamic volleyball setting.
+A reinforcement learning-based volleyball game developed using Unity, where an agent learns to play volleyball through trial and error. The game is designed to implement reinforcement learning algorithms to improve agent behavior in the context of volleyball.
 
 ## Setup and Installation
 ### Prerequisites:
