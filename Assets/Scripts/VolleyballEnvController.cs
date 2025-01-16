@@ -81,7 +81,9 @@ public class VolleyballEnvController : MonoBehaviour
     }
 
     /// <summary>
-    /// Resolves scenarios when ball enters a trigger and assigns rewards
+    /// Resolves scenarios when ball enters a trigger and assigns rewards.
+    /// Example reward functions are shown below.
+    /// To enable Self-Play: Set either Purple or Blue Agent's Team ID to 1.
     /// </summary>
     public void ResolveEvent(Event triggerEvent)
     {
@@ -91,10 +93,14 @@ public class VolleyballEnvController : MonoBehaviour
                 if (lastHitter == Team.Blue)
                 {
                     // apply penalty to blue agent
+                    // blueAgent.AddReward(-0.1f);
+                    // purpleAgent.AddReward(0.1f);
                 }
                 else if (lastHitter == Team.Purple)
                 {
                     // apply penalty to purple agent
+                    // purpleAgent.AddReward(-0.1f);
+                    // blueAgent.AddReward(0.1f);
                 }
 
                 // end episode
@@ -105,6 +111,8 @@ public class VolleyballEnvController : MonoBehaviour
 
             case Event.HitBlueGoal:
                 // blue wins
+                // blueAgent.AddReward(1f);
+                // purpleAgent.AddReward(-1f);
 
                 // turn floor blue
                 StartCoroutine(GoalScoredSwapGroundMaterial(volleyballSettings.blueGoalMaterial, RenderersList, .5f));
@@ -117,6 +125,8 @@ public class VolleyballEnvController : MonoBehaviour
 
             case Event.HitPurpleGoal:
                 // purple wins
+                // purpleAgent.AddReward(1f);
+                // blueAgent.AddReward(-1f);
 
                 // turn floor purple
                 StartCoroutine(GoalScoredSwapGroundMaterial(volleyballSettings.purpleGoalMaterial, RenderersList, .5f));
@@ -157,7 +167,7 @@ public class VolleyballEnvController : MonoBehaviour
         }
 
         yield return new WaitForSeconds(time); // wait for 2 sec
-        
+
         foreach (var renderer in rendererList)
         {
             renderer.material = volleyballSettings.defaultMaterial;
@@ -199,7 +209,7 @@ public class VolleyballEnvController : MonoBehaviour
             agent.transform.localPosition = new Vector3(randomPosX, randomPosY, randomPosZ);
             agent.transform.eulerAngles = new Vector3(0, randomRot, 0);
 
-            agent.GetComponent<Rigidbody>().velocity = default(Vector3);
+            agent.GetComponent<Rigidbody>().linearVelocity = default(Vector3);
         }
 
         // reset ball to starting conditions
@@ -229,6 +239,6 @@ public class VolleyballEnvController : MonoBehaviour
         }
 
         ballRb.angularVelocity = Vector3.zero;
-        ballRb.velocity = Vector3.zero;
+        ballRb.linearVelocity = Vector3.zero;
     }
 }
