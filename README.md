@@ -46,4 +46,4 @@ tensorboard --logdir=results
 ```
 
 ## Acknoledgement
-This project was built with the help of the guide from Coder One's "An introduction to machine learning with Unity ML-Agents": https://www.gocoder.one/blog/introduction-to-unity-ml-agents/
+This project was built with the help of Coder One's "An introduction to machine learning with Unity ML-Agents": https://www.gocoder.one/blog/introduction-to-unity-ml-agents/
